@@ -49,3 +49,6 @@ yarn.lock
 
 # DS_Store
 .DS_Store
+
+# API Key
+src/apiKey.js
