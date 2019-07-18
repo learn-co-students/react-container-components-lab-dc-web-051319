@@ -26,23 +26,31 @@ class SearchableMovieReviewsContainer extends Component {
             });
     }
 
-    componentDidUpdate() {
-        this.getMovieReviews()
-    }
+    // componentDidUpdate() {
+    //     this.getMovieReviews()
+    // }
 
     handleSearch = (event) => {
         event.preventDefault()
+        // this.setState({
+        //     searchTerm: event.target[0].value
+        // })
+        this.getMovieReviews()
+    }
+
+    handleChange = (event) => {
         this.setState({
-            searchTerm: event.target[0].value
+            searchTerm: event.target.value
         })
+
     }
 
     render() {
         return (
             <div className="searchable-movie-reviews">
                 <form onSubmit={this.handleSearch}>
-                    <input type="text"></input>
-                    <input type="submit"></input>
+                    <input name="search" type="text" onChange={this.handleChange}></input>
+                    <input value="submit" type="submit"></input>
                 </form>
                 <MovieReviews reviews={this.state.reviews} />
             </div>
