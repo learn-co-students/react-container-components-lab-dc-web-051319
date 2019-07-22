@@ -3,7 +3,7 @@ import React from 'react'
 
 const MovieReviews = (props) => {
   return (
-    <div className="reviews-list">
+    <div className="review-list">
       {props.reviews.map(review => {
         return <div
                 key={review.headline}
